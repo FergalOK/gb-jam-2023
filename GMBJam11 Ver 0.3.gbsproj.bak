@@ -1,5 +1,5 @@
 {
-    "name": "GMJam11 Project",
+    "name": "Marsian Sols",
     "author": "Evelina and P.A.L.",
     "_version": "3.1.0",
     "_release": "3",
@@ -1954,8 +1954,8 @@
             "autoFadeSpeed": 1,
             "id": "a4d14d3f-8d5a-40ca-86e2-b0ab61b1ad17",
             "symbol": "scene_11",
-            "x": 628.6743295019152,
-            "y": 553.6959003350353,
+            "x": 628.4604257585996,
+            "y": 554.0595366986716,
             "actors": [
                 {
                     "name": "Bed",
@@ -2034,7 +2034,9 @@
                                     },
                                     {
                                         "command": "EVENT_GROUP",
-                                        "args": {},
+                                        "args": {
+                                            "__collapse": false
+                                        },
                                         "children": {
                                             "true": [
                                                 {
@@ -2095,6 +2097,656 @@
                     "id": "6bade6ba-4d7a-4d98-88f2-64d066623fd8",
                     "x": 16,
                     "y": 15
+                },
+                {
+                    "name": "Barrier (Generator)",
+                    "frame": 0,
+                    "animate": false,
+                    "spriteSheetId": "4f3f9ef0-be88-4eb5-aa04-9d64ed4bfe1c",
+                    "direction": "down",
+                    "moveSpeed": 1,
+                    "animSpeed": 15,
+                    "paletteId": "",
+                    "isPinned": false,
+                    "persistent": false,
+                    "collisionGroup": "",
+                    "symbol": "actor_0",
+                    "script": [
+                        {
+                            "command": "EVENT_TEXT",
+                            "args": {
+                                "text": [
+                                    "Access to:\nPower Room. \nStatus: Scanning.."
+                                ],
+                                "avatarId": ""
+                            },
+                            "id": "3345492f-f430-4887-aa1d-a5fa5f2ce6b8"
+                        },
+                        {
+                            "command": "EVENT_IF_VALUE",
+                            "args": {
+                                "variable": "4",
+                                "operator": ">=",
+                                "comparator": 35,
+                                "__collapseElse": false
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_TEXT",
+                                        "args": {
+                                            "text": [
+                                                "Do you want to \naccess this room?"
+                                            ],
+                                            "avatarId": "",
+                                            "__collapse": true
+                                        },
+                                        "id": "02e21bfc-4c93-4782-be99-7e64fb45a528"
+                                    },
+                                    {
+                                        "command": "EVENT_CHOICE",
+                                        "args": {
+                                            "variable": "18",
+                                            "trueText": "Yes (35R)",
+                                            "falseText": "Not yet...",
+                                            "__collapse": true
+                                        },
+                                        "id": "0b6681ab-2433-4ec6-bc11-09935ca94ec3"
+                                    },
+                                    {
+                                        "command": "EVENT_IF_TRUE",
+                                        "args": {
+                                            "variable": "18",
+                                            "__collapseElse": true,
+                                            "__collapse": false
+                                        },
+                                        "children": {
+                                            "true": [
+                                                {
+                                                    "command": "EVENT_VARIABLE_MATH",
+                                                    "args": {
+                                                        "vectorX": "4",
+                                                        "operation": "sub",
+                                                        "other": "val",
+                                                        "vectorY": "L0",
+                                                        "value": 35,
+                                                        "minValue": "0",
+                                                        "maxValue": "32767",
+                                                        "clamp": false,
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "7b780eaf-6400-4ac2-b7df-09c9d25069c9"
+                                                },
+                                                {
+                                                    "command": "EVENT_ACTOR_DEACTIVATE",
+                                                    "args": {
+                                                        "actorId": "$self$",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "e0e3a751-ae4d-4a22-8589-60c06810394e"
+                                                },
+                                                {
+                                                    "command": "EVENT_INC_VALUE",
+                                                    "args": {
+                                                        "variable": "18",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "6e041f22-23a5-44af-b215-d89c5c0a0cf6"
+                                                },
+                                                {
+                                                    "command": "EVENT_TEXT",
+                                                    "args": {
+                                                        "text": [
+                                                            "Access granted."
+                                                        ],
+                                                        "avatarId": "",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "436b7f12-61ac-4d8b-ab95-4259ba1cbe8d"
+                                                }
+                                            ],
+                                            "false": []
+                                        },
+                                        "id": "b857357d-f88a-491f-b3b1-3f13ac38a1ef"
+                                    }
+                                ],
+                                "false": [
+                                    {
+                                        "command": "EVENT_TEXT",
+                                        "args": {
+                                            "text": [
+                                                "You need 35R\nfor access."
+                                            ],
+                                            "avatarId": "",
+                                            "__collapse": false
+                                        },
+                                        "id": "c0f89a9b-9611-4c34-a089-e645f2e24758"
+                                    }
+                                ]
+                            },
+                            "id": "2035ecf3-505b-419e-b62b-36202db426d5"
+                        }
+                    ],
+                    "startScript": [],
+                    "updateScript": [],
+                    "hit1Script": [],
+                    "hit2Script": [],
+                    "hit3Script": [],
+                    "id": "266924f6-70ae-4857-8cf5-b212a6fbe784",
+                    "x": 18,
+                    "y": 11
+                },
+                {
+                    "name": "Barrier (Bathroom)",
+                    "frame": 0,
+                    "animate": false,
+                    "spriteSheetId": "4f3f9ef0-be88-4eb5-aa04-9d64ed4bfe1c",
+                    "direction": "down",
+                    "moveSpeed": 1,
+                    "animSpeed": 15,
+                    "paletteId": "",
+                    "isPinned": false,
+                    "persistent": false,
+                    "collisionGroup": "",
+                    "symbol": "actor_1",
+                    "script": [
+                        {
+                            "command": "EVENT_TEXT",
+                            "args": {
+                                "text": [
+                                    "Access to:\nBathroom. \nStatus: Scanning.."
+                                ],
+                                "avatarId": ""
+                            },
+                            "id": "3ce1d5a0-114f-41a7-b8fe-9c2156171303"
+                        },
+                        {
+                            "command": "EVENT_IF_VALUE",
+                            "args": {
+                                "variable": "18",
+                                "operator": "==",
+                                "comparator": "0",
+                                "__collapseElse": false
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_TEXT",
+                                        "args": {
+                                            "text": [
+                                                "You first need to\nget access to the\nPower Room."
+                                            ],
+                                            "avatarId": "",
+                                            "__collapse": true
+                                        },
+                                        "id": "2117487c-c70d-48b0-9a42-a8a7ca49e67b"
+                                    }
+                                ],
+                                "false": [
+                                    {
+                                        "command": "EVENT_IF_VALUE",
+                                        "args": {
+                                            "variable": "4",
+                                            "operator": ">=",
+                                            "comparator": 70,
+                                            "__collapseElse": false,
+                                            "__collapse": false
+                                        },
+                                        "children": {
+                                            "true": [
+                                                {
+                                                    "command": "EVENT_IF_VALUE",
+                                                    "args": {
+                                                        "variable": "0",
+                                                        "operator": ">=",
+                                                        "comparator": 15,
+                                                        "__collapseElse": false
+                                                    },
+                                                    "children": {
+                                                        "true": [
+                                                            {
+                                                                "command": "EVENT_TEXT",
+                                                                "args": {
+                                                                    "text": [
+                                                                        "Do you want to \naccess this room?"
+                                                                    ],
+                                                                    "avatarId": "",
+                                                                    "__collapse": true
+                                                                },
+                                                                "id": "a0498cd4-54e5-427b-8dd8-0983e36203c2"
+                                                            },
+                                                            {
+                                                                "command": "EVENT_CHOICE",
+                                                                "args": {
+                                                                    "variable": "19",
+                                                                    "trueText": "Yes (70R & 15R+)",
+                                                                    "falseText": "Not yet...",
+                                                                    "__collapse": false
+                                                                },
+                                                                "id": "cfdbdc21-2813-4b8a-9fd3-872abca9489d"
+                                                            },
+                                                            {
+                                                                "command": "EVENT_IF_TRUE",
+                                                                "args": {
+                                                                    "variable": "19",
+                                                                    "__collapseElse": true,
+                                                                    "__collapse": false
+                                                                },
+                                                                "children": {
+                                                                    "true": [
+                                                                        {
+                                                                            "command": "EVENT_VARIABLE_MATH",
+                                                                            "args": {
+                                                                                "vectorX": "4",
+                                                                                "operation": "sub",
+                                                                                "other": "val",
+                                                                                "vectorY": "L0",
+                                                                                "value": 70,
+                                                                                "minValue": "0",
+                                                                                "maxValue": "32767",
+                                                                                "clamp": false,
+                                                                                "__collapse": true
+                                                                            },
+                                                                            "id": "fde9e800-e557-4b1e-ad09-2c05ba02d3ec"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_VARIABLE_MATH",
+                                                                            "args": {
+                                                                                "vectorX": "0",
+                                                                                "operation": "sub",
+                                                                                "other": "val",
+                                                                                "vectorY": "L0",
+                                                                                "value": 15,
+                                                                                "minValue": "0",
+                                                                                "maxValue": "32767",
+                                                                                "clamp": false,
+                                                                                "__collapse": true
+                                                                            },
+                                                                            "id": "d0c68b9e-8f2e-4d7c-a2d7-c9ec0a345ea5"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_ACTOR_DEACTIVATE",
+                                                                            "args": {
+                                                                                "actorId": "$self$",
+                                                                                "__collapse": true
+                                                                            },
+                                                                            "id": "e5a1d39d-ab35-4223-b45d-2de190cbd64e"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_INC_VALUE",
+                                                                            "args": {
+                                                                                "variable": "19",
+                                                                                "__collapse": true
+                                                                            },
+                                                                            "id": "fbba0569-09f6-46ad-a56c-f012d48f0a3f"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_TEXT",
+                                                                            "args": {
+                                                                                "text": [
+                                                                                    "Access granted."
+                                                                                ],
+                                                                                "avatarId": "",
+                                                                                "__collapse": true
+                                                                            },
+                                                                            "id": "2bdb5c59-6e30-49f5-bb7e-e3d47001a7b9"
+                                                                        }
+                                                                    ],
+                                                                    "false": []
+                                                                },
+                                                                "id": "ad391790-6b7b-4f36-a11e-5c7e69d2f7ae"
+                                                            }
+                                                        ],
+                                                        "false": [
+                                                            {
+                                                                "command": "EVENT_TEXT",
+                                                                "args": {
+                                                                    "text": [
+                                                                        "You need 70R and\n15R+ for access."
+                                                                    ],
+                                                                    "avatarId": "",
+                                                                    "__collapse": true
+                                                                },
+                                                                "id": "a1bae8ad-93f8-4c54-be43-3d3f42709b63"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "id": "d5311314-7ac8-40e4-8fa5-4f8777cdc209"
+                                                }
+                                            ],
+                                            "false": [
+                                                {
+                                                    "command": "EVENT_TEXT",
+                                                    "args": {
+                                                        "text": [
+                                                            "You need 70R and\n15R+ for access."
+                                                        ],
+                                                        "avatarId": "",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "d701f67a-dc99-4182-8253-4c54327046e1"
+                                                }
+                                            ]
+                                        },
+                                        "id": "95ba4642-453b-4e25-8afb-2982b353d88e"
+                                    }
+                                ]
+                            },
+                            "id": "7bb1399a-a0bb-412f-bd1c-a2bf9a2248b5"
+                        }
+                    ],
+                    "startScript": [],
+                    "updateScript": [],
+                    "hit1Script": [],
+                    "hit2Script": [],
+                    "hit3Script": [],
+                    "id": "9d609adb-4799-4ed6-8a27-3539148142d2",
+                    "x": 0,
+                    "y": 11
+                },
+                {
+                    "name": "Barrier (Aquarium)",
+                    "frame": 0,
+                    "animate": false,
+                    "spriteSheetId": "6e84d308-9016-49d0-bf32-79c377202643",
+                    "direction": "down",
+                    "moveSpeed": 1,
+                    "animSpeed": 15,
+                    "paletteId": "",
+                    "isPinned": false,
+                    "persistent": false,
+                    "collisionGroup": "",
+                    "symbol": "actor_3",
+                    "script": [
+                        {
+                            "command": "EVENT_TEXT",
+                            "args": {
+                                "text": [
+                                    "Access to:\n[TOP SECRET]. \nStatus: Scanning.."
+                                ],
+                                "avatarId": ""
+                            },
+                            "id": "7c5b980a-f4db-418b-ae3d-23911b37721c"
+                        },
+                        {
+                            "command": "EVENT_IF_VALUE",
+                            "args": {
+                                "variable": "18",
+                                "operator": "==",
+                                "comparator": "0",
+                                "__collapseElse": false
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_TEXT",
+                                        "args": {
+                                            "text": [
+                                                "You first need an\naccess to the \nprevious rooms."
+                                            ],
+                                            "avatarId": "",
+                                            "__collapse": true
+                                        },
+                                        "id": "df4f59ec-92ed-408c-8554-169f39145e65"
+                                    }
+                                ],
+                                "false": [
+                                    {
+                                        "command": "EVENT_IF_VALUE",
+                                        "args": {
+                                            "variable": "19",
+                                            "operator": "==",
+                                            "comparator": "0",
+                                            "__collapseElse": false
+                                        },
+                                        "children": {
+                                            "true": [
+                                                {
+                                                    "command": "EVENT_TEXT",
+                                                    "args": {
+                                                        "text": [
+                                                            "You first need an\naccess to the \nprevious rooms."
+                                                        ],
+                                                        "avatarId": "",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "9818cf77-f280-48b0-add0-df22c4996f1f"
+                                                }
+                                            ],
+                                            "false": [
+                                                {
+                                                    "command": "EVENT_IF_VALUE",
+                                                    "args": {
+                                                        "variable": "4",
+                                                        "operator": ">=",
+                                                        "comparator": 100,
+                                                        "__collapseElse": false,
+                                                        "__collapse": false
+                                                    },
+                                                    "children": {
+                                                        "true": [
+                                                            {
+                                                                "command": "EVENT_IF_VALUE",
+                                                                "args": {
+                                                                    "variable": "3",
+                                                                    "operator": ">=",
+                                                                    "comparator": 3,
+                                                                    "__collapseElse": false
+                                                                },
+                                                                "children": {
+                                                                    "true": [
+                                                                        {
+                                                                            "command": "EVENT_TEXT",
+                                                                            "args": {
+                                                                                "text": [
+                                                                                    "Do you want to \naccess this room?"
+                                                                                ],
+                                                                                "avatarId": "",
+                                                                                "__collapse": true
+                                                                            },
+                                                                            "id": "1f3a5dab-6aff-4a2b-a5fd-e9e165bcc2ab"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_CHOICE",
+                                                                            "args": {
+                                                                                "variable": "20",
+                                                                                "trueText": "Yes (100R & 15RS)",
+                                                                                "falseText": "Not yet...",
+                                                                                "__collapse": false
+                                                                            },
+                                                                            "id": "e0719078-8241-4bfa-b240-ce2512bd3618"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_IF_TRUE",
+                                                                            "args": {
+                                                                                "variable": "20",
+                                                                                "__collapseElse": true,
+                                                                                "__collapse": false
+                                                                            },
+                                                                            "children": {
+                                                                                "true": [
+                                                                                    {
+                                                                                        "command": "EVENT_VARIABLE_MATH",
+                                                                                        "args": {
+                                                                                            "vectorX": "4",
+                                                                                            "operation": "sub",
+                                                                                            "other": "val",
+                                                                                            "vectorY": "L0",
+                                                                                            "value": 100,
+                                                                                            "minValue": "0",
+                                                                                            "maxValue": "32767",
+                                                                                            "clamp": false,
+                                                                                            "__collapse": true
+                                                                                        },
+                                                                                        "id": "a9232871-9103-4ddc-bebc-2cd9aac9cffe"
+                                                                                    },
+                                                                                    {
+                                                                                        "command": "EVENT_VARIABLE_MATH",
+                                                                                        "args": {
+                                                                                            "vectorX": "3",
+                                                                                            "operation": "sub",
+                                                                                            "other": "val",
+                                                                                            "vectorY": "L0",
+                                                                                            "value": 3,
+                                                                                            "minValue": "0",
+                                                                                            "maxValue": "32767",
+                                                                                            "clamp": false,
+                                                                                            "__collapse": true
+                                                                                        },
+                                                                                        "id": "bb04ed41-11e9-4b95-b8bb-e9c9c29a890c"
+                                                                                    },
+                                                                                    {
+                                                                                        "command": "EVENT_ACTOR_DEACTIVATE",
+                                                                                        "args": {
+                                                                                            "actorId": "$self$",
+                                                                                            "__collapse": true
+                                                                                        },
+                                                                                        "id": "349c1f6e-df35-4ba7-b094-799bde222a1e"
+                                                                                    },
+                                                                                    {
+                                                                                        "command": "EVENT_INC_VALUE",
+                                                                                        "args": {
+                                                                                            "variable": "20",
+                                                                                            "__collapse": true
+                                                                                        },
+                                                                                        "id": "b765a2ef-eee3-4ea5-9a59-0570d2e6928e"
+                                                                                    },
+                                                                                    {
+                                                                                        "command": "EVENT_TEXT",
+                                                                                        "args": {
+                                                                                            "text": [
+                                                                                                "Access granted."
+                                                                                            ],
+                                                                                            "avatarId": "",
+                                                                                            "__collapse": true
+                                                                                        },
+                                                                                        "id": "79791db5-609d-4d29-ba4e-dc42725a5033"
+                                                                                    }
+                                                                                ],
+                                                                                "false": []
+                                                                            },
+                                                                            "id": "36e81f77-d361-42f2-a15e-e2460ec934af"
+                                                                        }
+                                                                    ],
+                                                                    "false": [
+                                                                        {
+                                                                            "command": "EVENT_TEXT",
+                                                                            "args": {
+                                                                                "text": [
+                                                                                    "You need 100R and\n3RS for access."
+                                                                                ],
+                                                                                "avatarId": "",
+                                                                                "__collapse": true
+                                                                            },
+                                                                            "id": "dca4245b-9f4a-4562-9110-c822b0628cce"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "id": "e30c4185-97bf-49c9-b2ad-326d2c8d919a"
+                                                            }
+                                                        ],
+                                                        "false": [
+                                                            {
+                                                                "command": "EVENT_TEXT",
+                                                                "args": {
+                                                                    "text": [
+                                                                        "You need 100R and\n3RS for access."
+                                                                    ],
+                                                                    "avatarId": "",
+                                                                    "__collapse": true
+                                                                },
+                                                                "id": "c9a3c3ab-551f-4deb-a87f-8acd46bdba19"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "id": "c35b3c4b-1d7b-4eb1-ab04-174f4c204092"
+                                                }
+                                            ]
+                                        },
+                                        "id": "15c0f36f-7185-4cde-8b0f-f94e0da3cace"
+                                    }
+                                ]
+                            },
+                            "id": "3c6663ee-1879-4304-8d59-22506c0694c0"
+                        }
+                    ],
+                    "startScript": [],
+                    "updateScript": [],
+                    "hit1Script": [],
+                    "hit2Script": [],
+                    "hit3Script": [],
+                    "id": "64fb4a2c-f42f-4854-9c18-623007ef28d7",
+                    "x": 9,
+                    "y": 17
+                },
+                {
+                    "name": "Test",
+                    "frame": 0,
+                    "animate": false,
+                    "spriteSheetId": "6f56d774-5543-41eb-8c8a-146a014c3595",
+                    "direction": "down",
+                    "moveSpeed": 1,
+                    "animSpeed": 15,
+                    "paletteId": "",
+                    "isPinned": false,
+                    "persistent": false,
+                    "collisionGroup": "",
+                    "symbol": "actor_4",
+                    "script": [
+                        {
+                            "command": "EVENT_VARIABLE_MATH",
+                            "args": {
+                                "vectorX": "4",
+                                "operation": "add",
+                                "other": "val",
+                                "vectorY": "L0",
+                                "value": 20,
+                                "minValue": "0",
+                                "maxValue": "32767",
+                                "clamp": false,
+                                "__collapse": true
+                            },
+                            "id": "b132d3ec-91a3-4fdc-8c09-a9bd9320b84f"
+                        },
+                        {
+                            "command": "EVENT_VARIABLE_MATH",
+                            "args": {
+                                "vectorX": "0",
+                                "operation": "add",
+                                "other": "val",
+                                "vectorY": "L0",
+                                "value": 10,
+                                "minValue": "0",
+                                "maxValue": "32767",
+                                "clamp": false,
+                                "__collapse": true
+                            },
+                            "id": "b65bf9bc-ec7b-4c04-b1d0-401afd4fd951"
+                        },
+                        {
+                            "command": "EVENT_VARIABLE_MATH",
+                            "args": {
+                                "vectorX": "3",
+                                "operation": "add",
+                                "other": "val",
+                                "vectorY": "L0",
+                                "value": 1,
+                                "minValue": "0",
+                                "maxValue": "32767",
+                                "clamp": false,
+                                "__collapse": true
+                            },
+                            "id": "277c06b2-c679-4089-872a-5dea72e4dcbb"
+                        }
+                    ],
+                    "startScript": [],
+                    "updateScript": [],
+                    "hit1Script": [],
+                    "hit2Script": [],
+                    "hit3Script": [],
+                    "id": "fb00a203-b97f-4100-8787-459a532ce959",
+                    "x": 11,
+                    "y": 11
                 }
             ],
             "triggers": [
@@ -2207,7 +2859,7 @@
                                     "customEventId": "056b1175-ca3b-42a1-a376-439d78fc3b9e",
                                     "__collapse": true
                                 },
-                                "id": "a54f63e9-d13e-4d05-a118-a81f421c3381"
+                                "id": "6ca6a629-bf2c-4b08-a673-92a662600263"
                             },
                             {
                                 "command": "EVENT_CALL_CUSTOM_EVENT",
@@ -2215,18 +2867,25 @@
                                     "customEventId": "b41ec931-e721-4645-8adb-414b7846b107",
                                     "__collapse": true
                                 },
-                                "id": "98ed6fe3-2ecb-40f8-bef4-13886cc8af5d"
+                                "id": "9f8042bb-7757-4357-ab3c-ad196a608560"
+                            },
+                            {
+                                "command": "EVENT_MUSIC_PLAY",
+                                "args": {
+                                    "musicId": "b76f3f65-fc9c-423d-a602-bd93443f8cfd"
+                                },
+                                "id": "e378238b-a698-4427-9540-b3e824061173"
                             }
                         ]
                     },
-                    "id": "bbb5c1ef-d22b-4c0e-a1e1-9adc39994c0b"
+                    "id": "46e48d98-0ba7-47b0-ba31-68c41b0822dc"
                 },
                 {
                     "command": "EVENT_IF_TRUE",
                     "args": {
                         "variable": "2",
                         "__collapseElse": true,
-                        "__collapse": false
+                        "__collapse": true
                     },
                     "children": {
                         "true": [
@@ -2236,7 +2895,7 @@
                                     "__collapse": true,
                                     "__comment": false
                                 },
-                                "id": "be83bff8-3b4d-4c93-a1e7-68b1fb82c888"
+                                "id": "a147c99d-a550-4a01-80b0-fe0ceddd2d8f"
                             },
                             {
                                 "command": "EVENT_IF_VALUE",
@@ -2259,11 +2918,11 @@
                                                 "avatarId": "",
                                                 "__collapse": true
                                             },
-                                            "id": "ca5acbc2-67b0-4bcb-8434-3ab66af29b6d"
+                                            "id": "95b6bb34-f134-4776-a6c9-d3b55ccb1e9d"
                                         }
                                     ]
                                 },
-                                "id": "9aa892b7-bf16-43e6-8094-fda29acb82bb"
+                                "id": "923891a1-82bf-4050-94ff-4024994043d4"
                             },
                             {
                                 "command": "EVENT_IF_VALUE",
@@ -2296,18 +2955,18 @@
                                                 "avatarId": "",
                                                 "__collapse": true
                                             },
-                                            "id": "ddb3af24-a3aa-454c-94e1-169721238ed9"
+                                            "id": "d57410fa-7821-4d98-9728-23cd9d4c3f05"
                                         }
                                     ],
                                     "false": []
                                 },
-                                "id": "1e74ec06-b949-46ec-8daa-3e31137316f9"
+                                "id": "d3d0d543-46f4-492a-845a-526e74665684"
                             },
                             {
                                 "command": "EVENT_GROUP",
                                 "args": {
                                     "__label": "Save Option Group",
-                                    "__collapse": false
+                                    "__collapse": true
                                 },
                                 "children": {
                                     "true": [
@@ -2319,7 +2978,7 @@
                                                 "falseText": "Save game",
                                                 "__collapse": true
                                             },
-                                            "id": "d6ae1ddd-b2a1-418e-b4ae-ce37c2f28ece"
+                                            "id": "4d8fcb18-b38b-4a0d-9c57-c8080595f0f2"
                                         },
                                         {
                                             "command": "EVENT_IF_FALSE",
@@ -2347,7 +3006,7 @@
                                                             "layout": "dialogue",
                                                             "__collapse": true
                                                         },
-                                                        "id": "6e96fd36-6524-4297-a171-14f8a912594a"
+                                                        "id": "6e3b53d7-e799-418d-b77a-8aac9409a4aa"
                                                     },
                                                     {
                                                         "command": "EVENT_IF_VALUE",
@@ -2377,16 +3036,16 @@
                                                                                     ],
                                                                                     "avatarId": ""
                                                                                 },
-                                                                                "id": "07f77f33-719e-4cd4-8c2e-32b331a336d2"
+                                                                                "id": "9e8c8295-0635-4ee6-abcb-259a22b0447e"
                                                                             }
                                                                         ]
                                                                     },
-                                                                    "id": "8c2028be-c02e-400f-9b58-eab8d26700cf"
+                                                                    "id": "beb3dc6e-6248-4202-809f-6e9dcf082fe1"
                                                                 }
                                                             ],
                                                             "false": []
                                                         },
-                                                        "id": "67a7e56b-533e-4d05-b200-c41084bcb6f5"
+                                                        "id": "656e2483-3122-48fd-b04e-e4112ee795f7"
                                                     },
                                                     {
                                                         "command": "EVENT_IF_VALUE",
@@ -2416,16 +3075,16 @@
                                                                                     ],
                                                                                     "avatarId": ""
                                                                                 },
-                                                                                "id": "1ef99173-98b9-4175-83fc-b2c318f91d92"
+                                                                                "id": "f0c8ff93-efc3-4522-935e-d72e0198bf10"
                                                                             }
                                                                         ]
                                                                     },
-                                                                    "id": "c3805673-9f5e-4401-b0d9-feaa3233f0c8"
+                                                                    "id": "84c5561e-8423-489c-92a4-c92895991449"
                                                                 }
                                                             ],
                                                             "false": []
                                                         },
-                                                        "id": "9e8abe99-5a43-4168-a27e-c28c97ddc138"
+                                                        "id": "767aa393-9aaf-43e1-a2f2-60bbb9fc00b6"
                                                     },
                                                     {
                                                         "command": "EVENT_IF_VALUE",
@@ -2455,21 +3114,21 @@
                                                                                     ],
                                                                                     "avatarId": ""
                                                                                 },
-                                                                                "id": "1e4d7ebf-be6a-4f8f-9f23-93ab81c09928"
+                                                                                "id": "9d547501-bf5a-469d-a4c3-ab667ee3d64a"
                                                                             }
                                                                         ]
                                                                     },
-                                                                    "id": "d876a698-2c31-4cc4-a7ad-f6b4535e4de6"
+                                                                    "id": "0daa3662-adc1-447c-a560-76864085be28"
                                                                 }
                                                             ],
                                                             "false": []
                                                         },
-                                                        "id": "b94924d0-1c10-4001-a56c-3c8813d07e19"
+                                                        "id": "65462385-235f-49ff-9db8-57825a990ef4"
                                                     }
                                                 ],
                                                 "false": []
                                             },
-                                            "id": "3355767a-9568-4c0d-9871-eb7e44f3c004"
+                                            "id": "e8f738e7-b750-4faa-afb9-e8867ab941f6"
                                         },
                                         {
                                             "command": "EVENT_SET_TRUE",
@@ -2477,7 +3136,7 @@
                                                 "variable": "L0",
                                                 "__collapse": true
                                             },
-                                            "id": "d741baee-2c0a-4166-ad82-74f77886d64c"
+                                            "id": "9ef1397e-1ae7-4860-8a40-0695e8506766"
                                         },
                                         {
                                             "command": "EVENT_SET_VALUE",
@@ -2489,11 +3148,11 @@
                                                 },
                                                 "__collapse": true
                                             },
-                                            "id": "c900adc3-f193-4fdf-9bc1-da9633171fa9"
+                                            "id": "a78bf5c3-b7c1-4397-b8f5-669836afacc9"
                                         }
                                     ]
                                 },
-                                "id": "63bba06f-ee7c-4888-9645-154ad8146b56"
+                                "id": "af9222d3-b788-4796-a609-a4ceea101d24"
                             },
                             {
                                 "command": "EVENT_SET_FALSE",
@@ -2501,12 +3160,122 @@
                                     "variable": "2",
                                     "__collapse": true
                                 },
-                                "id": "cf019d05-13dd-4932-a5a3-b52a411a7362"
+                                "id": "c4745535-ce43-4314-9492-d20b3210ef94"
                             }
                         ],
                         "false": []
                     },
-                    "id": "e4de765a-cb68-45ec-9026-a05572efd4ad"
+                    "id": "4ae2cc4d-4327-4ff9-8c36-c2d2c8292d18"
+                },
+                {
+                    "command": "EVENT_GROUP",
+                    "args": {
+                        "__label": "Group: Barriers"
+                    },
+                    "children": {
+                        "true": [
+                            {
+                                "command": "EVENT_IF_VALUE",
+                                "args": {
+                                    "variable": "18",
+                                    "operator": "==",
+                                    "comparator": "0",
+                                    "__collapseElse": false,
+                                    "__collapse": true
+                                },
+                                "children": {
+                                    "true": [
+                                        {
+                                            "command": "EVENT_ACTOR_ACTIVATE",
+                                            "args": {
+                                                "actorId": "266924f6-70ae-4857-8cf5-b212a6fbe784",
+                                                "__collapse": true
+                                            },
+                                            "id": "7670fe7c-9c11-4bd8-afc5-901a722a8860"
+                                        }
+                                    ],
+                                    "false": [
+                                        {
+                                            "command": "EVENT_ACTOR_DEACTIVATE",
+                                            "args": {
+                                                "actorId": "266924f6-70ae-4857-8cf5-b212a6fbe784",
+                                                "__collapse": true
+                                            },
+                                            "id": "e6f0bc70-f6eb-4d8b-8ab7-ba51948ebc26"
+                                        }
+                                    ]
+                                },
+                                "id": "78983fce-3f5b-4bcf-8703-d512b737c5ef"
+                            },
+                            {
+                                "command": "EVENT_IF_VALUE",
+                                "args": {
+                                    "variable": "19",
+                                    "operator": "!=",
+                                    "comparator": "0",
+                                    "__collapseElse": false,
+                                    "__collapse": true
+                                },
+                                "children": {
+                                    "true": [
+                                        {
+                                            "command": "EVENT_ACTOR_DEACTIVATE",
+                                            "args": {
+                                                "actorId": "9d609adb-4799-4ed6-8a27-3539148142d2",
+                                                "__collapse": true
+                                            },
+                                            "id": "f7df99bf-e29e-4ec4-b1c1-291afee5b850"
+                                        }
+                                    ],
+                                    "false": [
+                                        {
+                                            "command": "EVENT_ACTOR_ACTIVATE",
+                                            "args": {
+                                                "actorId": "9d609adb-4799-4ed6-8a27-3539148142d2",
+                                                "__collapse": true
+                                            },
+                                            "id": "c0ade666-be0d-4c7b-938b-4596af1fdf1e"
+                                        }
+                                    ]
+                                },
+                                "id": "3895d471-ea04-4435-b537-505cc146ee3e"
+                            },
+                            {
+                                "command": "EVENT_IF_VALUE",
+                                "args": {
+                                    "variable": "20",
+                                    "operator": "!=",
+                                    "comparator": "0",
+                                    "__collapseElse": false,
+                                    "__collapse": true
+                                },
+                                "children": {
+                                    "true": [
+                                        {
+                                            "command": "EVENT_ACTOR_DEACTIVATE",
+                                            "args": {
+                                                "actorId": "64fb4a2c-f42f-4854-9c18-623007ef28d7",
+                                                "__collapse": true
+                                            },
+                                            "id": "137d3a22-675c-42de-9106-21f340b3514b"
+                                        }
+                                    ],
+                                    "false": [
+                                        {
+                                            "command": "EVENT_ACTOR_ACTIVATE",
+                                            "args": {
+                                                "actorId": "64fb4a2c-f42f-4854-9c18-623007ef28d7",
+                                                "__collapse": true
+                                            },
+                                            "id": "2af7a0b4-635c-48a6-aa84-728a5674478f"
+                                        }
+                                    ]
+                                },
+                                "id": "9e744f59-c766-430f-b5b3-b49143730278"
+                            }
+                        ]
+                    },
+                    "id": "03b0e1d6-c041-4b19-b549-ca40bdb057f3"
                 }
             ],
             "playerHit1Script": [],
@@ -4722,8 +5491,8 @@
             "autoFadeSpeed": 1,
             "id": "44ef3cd5-cac9-4901-aba4-ba542b3b588c",
             "symbol": "scene_14",
-            "x": 627.4539543030751,
-            "y": 741.879379030257,
+            "x": 628.3951307736634,
+            "y": 741.4087907949629,
             "actors": [
                 {
                     "name": "Fish",
@@ -6405,7 +7174,7 @@
                             "command": "EVENT_CHOICE",
                             "args": {
                                 "variable": "8",
-                                "trueText": "Yes! (15 rocks)",
+                                "trueText": "Yes! (15 R)",
                                 "falseText": "NO WAY.",
                                 "__collapse": false
                             },
@@ -6433,7 +7202,7 @@
                                                     "command": "EVENT_TEXT",
                                                     "args": {
                                                         "text": [
-                                                            "You don't have\nenough rocks..."
+                                                            "You need 15 R to\nrepair this."
                                                         ],
                                                         "avatarId": ""
                                                     },
@@ -6550,7 +7319,7 @@
                             "command": "EVENT_CHOICE",
                             "args": {
                                 "variable": "9",
-                                "trueText": "Yes! (15 rocks)",
+                                "trueText": "Yes! (15 R)",
                                 "falseText": "NEVER.",
                                 "__collapse": false
                             },
@@ -6578,7 +7347,7 @@
                                                     "command": "EVENT_TEXT",
                                                     "args": {
                                                         "text": [
-                                                            "You don't have\nenough rocks..."
+                                                            "You need 15 R to\nrepair this."
                                                         ],
                                                         "avatarId": ""
                                                     },
@@ -6695,7 +7464,7 @@
                             "command": "EVENT_CHOICE",
                             "args": {
                                 "variable": "10",
-                                "trueText": "Yes! (15 rocks)",
+                                "trueText": "Yes! (15 R)",
                                 "falseText": "WHAT FOR?",
                                 "__collapse": false
                             },
@@ -6723,9 +7492,10 @@
                                                     "command": "EVENT_TEXT",
                                                     "args": {
                                                         "text": [
-                                                            "You don't have\nenough rocks..."
+                                                            "You need 15 R to\nrepair this."
                                                         ],
-                                                        "avatarId": ""
+                                                        "avatarId": "",
+                                                        "__collapse": false
                                                     },
                                                     "id": "f5e954bd-54f3-4a5f-acbd-7e4be72f9c18"
                                                 }
@@ -6840,7 +7610,7 @@
                             "command": "EVENT_CHOICE",
                             "args": {
                                 "variable": "11",
-                                "trueText": "Yes! (15 rocks)",
+                                "trueText": "Yes! (15 R)",
                                 "falseText": "WHAT DO YOU MEAN?",
                                 "__collapse": false
                             },
@@ -6868,7 +7638,7 @@
                                                     "command": "EVENT_TEXT",
                                                     "args": {
                                                         "text": [
-                                                            "You don't have\nenough rocks..."
+                                                            "You need 15 R to\nrepair this."
                                                         ],
                                                         "avatarId": ""
                                                     },
@@ -7016,7 +7786,7 @@
                         {
                             "command": "EVENT_VARIABLE_MATH",
                             "args": {
-                                "vectorX": "4",
+                                "vectorX": "0",
                                 "operation": "add",
                                 "other": "val",
                                 "vectorY": "L0",
@@ -7054,7 +7824,7 @@
                         {
                             "command": "EVENT_VARIABLE_MATH",
                             "args": {
-                                "vectorX": "4",
+                                "vectorX": "3",
                                 "operation": "add",
                                 "other": "val",
                                 "vectorY": "L0",
@@ -7086,6 +7856,18 @@
                     "width": 6,
                     "height": 1,
                     "script": [
+                        {
+                            "command": "EVENT_SET_VALUE",
+                            "args": {
+                                "variable": "L0",
+                                "value": {
+                                    "type": "number",
+                                    "value": 1
+                                },
+                                "__collapse": true
+                            },
+                            "id": "cb408a0f-611e-4b44-81ce-1bb01d743bfb"
+                        },
                         {
                             "command": "EVENT_TEXT",
                             "args": {
@@ -7119,7 +7901,7 @@
                                             "cancelOnB": false,
                                             "layout": "dialogue",
                                             "cancelOnLastOption": true,
-                                            "__collapse": true
+                                            "__collapse": false
                                         },
                                         "id": "184d3417-9dc4-4db6-8497-87d4fa0b3244"
                                     },
@@ -7180,7 +7962,9 @@
                                                         "text": [
                                                             "Rocks are on Mars \nand let you expand\nyour base.",
                                                             "When you sleep,\nthey appear again.\nUseful, uh?",
-                                                            "You can see how\nrare each type is\nin the pause menu."
+                                                            "You can see how\nrare each type is\nin the pause menu.",
+                                                            "R refers to the\nfirst type, R+ to\nthe second one,",
+                                                            "And RS to the \nthird one."
                                                         ],
                                                         "avatarId": "",
                                                         "__collapse": true
@@ -7210,7 +7994,7 @@
                                             "operator": "==",
                                             "comparator": 3,
                                             "__collapseElse": true,
-                                            "__collapse": false
+                                            "__collapse": true
                                         },
                                         "children": {
                                             "true": [
@@ -7621,7 +8405,7 @@
                     "args": {
                         "variable": "L0",
                         "__collapseElse": true,
-                        "__collapse": true
+                        "__collapse": false
                     },
                     "children": {
                         "true": [
@@ -7644,7 +8428,8 @@
                                                     "...",
                                                     "I should get\nto work."
                                                 ],
-                                                "avatarId": "19bd0f94-bc9a-411c-bf90-cba916f81842"
+                                                "avatarId": "19bd0f94-bc9a-411c-bf90-cba916f81842",
+                                                "__collapse": true
                                             },
                                             "id": "a2af0cc7-0772-4000-b00b-3f4efecdf9a1"
                                         },
@@ -9109,6 +9894,16 @@
             "tileColors": []
         },
         {
+            "id": "d07b1fbb-778b-4a2c-a97e-763d0c07008b",
+            "name": "Main Menu - Marsian Sols",
+            "symbol": "bg_main_menu_marsian_sols",
+            "width": 171,
+            "height": 154,
+            "imageWidth": 1372,
+            "imageHeight": 1232,
+            "filename": "Main Menu - Marsian Sols.png"
+        },
+        {
             "id": "0db94199-310c-4ab4-857d-5fd2d1fadbf6",
             "name": "Main Menu Prototype Mk.1",
             "symbol": "bg_main_menu_prototype_mk_1",
@@ -9138,7 +9933,8 @@
             "height": 18,
             "imageWidth": 160,
             "imageHeight": 144,
-            "filename": "Menu Main Mk.2.png"
+            "filename": "Menu Main Mk.2.png",
+            "tileColors": []
         },
         {
             "id": "de4a8b5f-2173-4f5b-a0b6-6adede474580",
@@ -9148,7 +9944,8 @@
             "height": 18,
             "imageWidth": 160,
             "imageHeight": 144,
-            "filename": "Menu Main Mk.3.png"
+            "filename": "Menu Main Mk.3.png",
+            "tileColors": []
         },
         {
             "id": "7cbea87a-139b-4d17-8573-89ff624a1e29",
@@ -9268,7 +10065,8 @@
             "height": 36,
             "imageWidth": 320,
             "imageHeight": 288,
-            "filename": "Wasteland 2.1 (Left).png"
+            "filename": "Wasteland 2.1 (Left).png",
+            "tileColors": []
         },
         {
             "id": "1cf8151e-6449-40a5-9363-8f364e720175",
@@ -15030,6 +15828,107 @@
             "boundsX": -16,
             "boundsY": 0,
             "boundsWidth": 48,
+            "boundsHeight": 16,
+            "animSpeed": 15
+        },
+        {
+            "id": "4c8dde79-fdda-42ca-8fdb-b638209fdf59",
+            "name": "Marsian Sols Title",
+            "symbol": "sprite_marsian_sols_title",
+            "numFrames": 8,
+            "type": "animated",
+            "filename": "Marsian Sols Title.png",
+            "checksum": "1dc8e8630cf802fb6c8ed00c1c012bb1ade0a1cd",
+            "width": 128,
+            "height": 24,
+            "states": [
+                {
+                    "id": "9d1db1a7-9e23-43ef-b140-7b52a47a9b5e",
+                    "name": "",
+                    "animationType": "multi_movement",
+                    "flipLeft": true,
+                    "animations": [
+                        {
+                            "id": "d32e749d-cd38-429e-b177-541be82a92a7",
+                            "frames": [
+                                {
+                                    "id": "d6095f08-1397-400c-815e-38e7f868c03b",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "fedd9dbc-94bc-4f7a-ab0b-596502286681",
+                            "frames": [
+                                {
+                                    "id": "7bbd909c-a510-47fe-ba3e-8175df23fe71",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3c621420-394a-40d8-81f3-9e7db8889828",
+                            "frames": [
+                                {
+                                    "id": "5a1ca6f6-3c47-4bed-99cb-15f16737a7a1",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "8b0bfd56-29dc-4bc1-b66c-8952c1ab8bd7",
+                            "frames": [
+                                {
+                                    "id": "fbe28e9f-28c1-48d2-a1d7-401c353dbd89",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "65061782-4b84-463d-bd00-4a06d931cc96",
+                            "frames": [
+                                {
+                                    "id": "d03a2f57-a50c-4c18-9a4b-ab2367c576f9",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "7e356619-29bb-40fb-a351-05ad480c381e",
+                            "frames": [
+                                {
+                                    "id": "b60a2759-0e60-48c0-86ad-0c810ec80875",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "bf02e517-24ad-44a8-8876-a91100b3aded",
+                            "frames": [
+                                {
+                                    "id": "d823df67-1288-4ee5-a92e-7a31d4062b20",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cd1c6df2-9530-4232-b3c1-a99e66d99e16",
+                            "frames": [
+                                {
+                                    "id": "55349ced-50c5-4969-a640-a7a6ead6bea7",
+                                    "tiles": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "numTiles": 0,
+            "canvasWidth": 32,
+            "canvasHeight": 32,
+            "boundsX": 0,
+            "boundsY": 0,
+            "boundsWidth": 16,
             "boundsHeight": 16,
             "animSpeed": 15
         },
@@ -23087,6 +23986,14 @@
             "type": "uge"
         },
         {
+            "id": "a657b747-8f9a-4db7-a32b-8dad9b29ca3d",
+            "name": "template (1)",
+            "symbol": "song_template_1_",
+            "filename": "template (1).mod",
+            "settings": {},
+            "type": "mod"
+        },
+        {
             "id": "f50428ab-a084-4591-9bba-2ba10fe7b1c6",
             "name": "template",
             "symbol": "song_template",
@@ -23241,8 +24148,8 @@
     "variables": [
         {
             "id": "0",
-            "name": "Stones",
-            "symbol": "var_stones"
+            "name": "Stones (R+)",
+            "symbol": "var_stones_r_0"
         },
         {
             "id": "1",
@@ -23256,13 +24163,13 @@
         },
         {
             "id": "3",
-            "name": "Rubis",
-            "symbol": "var_rubis"
+            "name": "Rubis (RS)",
+            "symbol": "var_rubis_rs_"
         },
         {
             "id": "4",
-            "name": "Rocks",
-            "symbol": "var_rocks"
+            "name": "Rocks (R)",
+            "symbol": "var_rocks_r_"
         },
         {
             "id": "5",
@@ -23518,6 +24425,31 @@
             "id": "bd5ac469-86c3-4d71-97f3-590cc70c7d33__L1",
             "name": "Local 1",
             "symbol": "var_local_21"
+        },
+        {
+            "id": "18",
+            "name": "Barrier1Generator",
+            "symbol": "var_barrier1generator"
+        },
+        {
+            "id": "9d609adb-4799-4ed6-8a27-3539148142d2__L0",
+            "name": "Local 0",
+            "symbol": "var_local_22"
+        },
+        {
+            "id": "19",
+            "name": "Barrier2Bathroom",
+            "symbol": "var_barrier2bathroom"
+        },
+        {
+            "id": "64fb4a2c-f42f-4854-9c18-623007ef28d7__L0",
+            "name": "Local 0",
+            "symbol": "var_local_23"
+        },
+        {
+            "id": "20",
+            "name": "Barrier3Secret",
+            "symbol": "var_barrier3secret"
         }
     ],
     "engineFieldValues": [
@@ -23527,16 +24459,16 @@
         }
     ],
     "settings": {
-        "startSceneId": "bd5ac469-86c3-4d71-97f3-590cc70c7d33",
-        "startX": 1,
-        "startY": 1,
+        "startSceneId": "a4d14d3f-8d5a-40ca-86e2-b0ab61b1ad17",
+        "startX": 9,
+        "startY": 12,
         "startMoveSpeed": 1,
         "startAnimSpeed": 15,
         "startDirection": "down",
         "showCollisions": true,
         "showConnections": true,
-        "worldScrollX": 0,
-        "worldScrollY": 0,
+        "worldScrollX": 589.5999755859375,
+        "worldScrollY": 670.4000244140625,
         "zoom": 150,
         "customColorsEnabled": true,
         "sgbEnabled": false,
@@ -23581,6 +24513,7 @@
             "LOGO": "c50095df-ab2f-458d-bed7-ae5c6739b5ac"
         },
         "musicDriver": "huge",
+        "cartType": "mbc5",
         "batterylessEnabled": false,
         "favoriteEvents": [
             "EVENT_TEXT",
